@@ -30,26 +30,61 @@ func _on_NewListButton_pressed():
 # ADD LIST TO GRID
 # ========================
 func add_list_to_ui(list_data):
-	print("ADDING UI") # DEBUG
-	
 	var panel = PanelContainer.new()
-	panel.custom_minimum_size = Vector2(200, 120)
-	
+	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	#panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	panel.custom_minimum_size = Vector2(180, 230)
+
+	# 🎨 STYLE (this is the important part)
+	var style = StyleBoxFlat.new()
+	style.bg_color = Color.from_hsv(randf(), 0.4, 0.9) # random soft color
+	style.corner_radius_top_left = 20
+	style.corner_radius_top_right = 20
+	style.corner_radius_bottom_left = 20
+	style.corner_radius_bottom_right = 20
+	panel.add_theme_stylebox_override("panel", style)
+
+	# 📦 CONTENT
+	var margin = MarginContainer.new()
+	margin.add_theme_constant_override("margin_left", 12)
+	margin.add_theme_constant_override("margin_right", 12)
+	margin.add_theme_constant_override("margin_top", 12)
+	margin.add_theme_constant_override("margin_bottom", 12)
+
 	var vbox = VBoxContainer.new()
-	
-	var button = Button.new()
-	button.text = list_data["name"]
-	button.pressed.connect(func(): open_list(list_data))
-	
+
+	# 📝 TITLE
+	var title = Label.new()
+	title.text = list_data["name"]
+	title.add_theme_font_size_override("font_size", 18)
+
+	# 🔢 SUBTEXT (placeholder for now)
+	var subtitle = Label.new()
+	subtitle.text = "0 tasks"
+	subtitle.modulate = Color(0,0,0,0.6)
+
+	# ❌ DELETE BUTTON (small)
 	var delete_btn = Button.new()
-	delete_btn.text = "Delete"
+	delete_btn.text = "×"
+	delete_btn.size_flags_horizontal = Control.SIZE_SHRINK_END
 	delete_btn.pressed.connect(func(): delete_list(list_data, panel))
-	
-	vbox.add_child(button)
+
+	# 🧱 CLICKABLE AREA
+	var click_area = Button.new()
+	click_area.text = ""
+	click_area.flat = true
+	click_area.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	click_area.pressed.connect(func(): open_list(list_data))
+
+	# Layout
 	vbox.add_child(delete_btn)
-	
-	panel.add_child(vbox)
-	
+	vbox.add_child(title)
+	vbox.add_child(subtitle)
+	vbox.add_child(click_area)
+
+	margin.add_child(vbox)
+	panel.add_child(margin)
+
 	list_container.add_child(panel)
 
 # ========================
@@ -94,11 +129,4 @@ func _notification(what):
 		update_columns()
 
 func update_columns():
-	var width = size.x
-	
-	if width < 600:
-		list_container.columns = 1
-	elif width < 1000:
-		list_container.columns = 2
-	else:
-		list_container.columns = 3
+	list_container.columns = 3

@@ -27,6 +27,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_u4wd2")
 
+[node name="NewListButton" type="Button" parent="Control" unique_id=140553670]
+layout_mode = 0
+offset_left = 818.0
+offset_top = 190.0
+offset_right = 966.0
+offset_bottom = 248.0
+text = "NEW LIST"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1315761480]
 layout_mode = 0
 offset_left = 61.0
@@ -34,15 +42,14 @@ offset_top = 258.0
 offset_right = 966.0
 offset_bottom = 951.0
 
-[node name="NewListButton" type="Button" parent="Control/VBoxContainer" unique_id=140553670]
-layout_mode = 2
-text = "NEW LIST"
-
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/VBoxContainer" unique_id=2045424133]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ListContainer" type="GridContainer" parent="Control/VBoxContainer/ScrollContainer" unique_id=1365355595]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 columns = 3
 
 [node name="IconIOsClearLight1024x1024_1x" type="Sprite2D" parent="Control" unique_id=1029402680]
@@ -50,4 +57,4 @@ position = Vector2(115, 114)
 scale = Vector2(0.16845703, 0.16845703)
 texture = ExtResource("3_w18ys")
 
-[connection signal="pressed" from="Control/VBoxContainer/NewListButton" to="Control" method="_on_NewListButton_pressed"]
+[connection signal="pressed" from="Control/NewListButton" to="Control" method="_on_NewListButton_pressed"]
