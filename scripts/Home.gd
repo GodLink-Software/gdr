@@ -35,7 +35,7 @@ func add_list_to_ui(list_data):
 	#panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	panel.custom_minimum_size = Vector2(180, 230)
 
-	# 🎨 STYLE (this is the important part)
+	# STYLE
 	var style = StyleBoxFlat.new()
 	style.bg_color = Color.from_hsv(randf(), 0.4, 0.9) # random soft color
 	style.corner_radius_top_left = 20
@@ -44,7 +44,7 @@ func add_list_to_ui(list_data):
 	style.corner_radius_bottom_right = 20
 	panel.add_theme_stylebox_override("panel", style)
 
-	# 📦 CONTENT
+	# CONTENT
 	var margin = MarginContainer.new()
 	margin.add_theme_constant_override("margin_left", 12)
 	margin.add_theme_constant_override("margin_right", 12)
@@ -53,23 +53,23 @@ func add_list_to_ui(list_data):
 
 	var vbox = VBoxContainer.new()
 
-	# 📝 TITLE
+	# TITLE
 	var title = Label.new()
 	title.text = list_data["name"]
 	title.add_theme_font_size_override("font_size", 18)
 
-	# 🔢 SUBTEXT (placeholder for now)
+	# SUBTEXT (placeholder for now)
 	var subtitle = Label.new()
 	subtitle.text = "0 tasks"
 	subtitle.modulate = Color(0,0,0,0.6)
 
-	# ❌ DELETE BUTTON (small)
+	# DELETE BUTTON (small)
 	var delete_btn = Button.new()
 	delete_btn.text = "×"
 	delete_btn.size_flags_horizontal = Control.SIZE_SHRINK_END
 	delete_btn.pressed.connect(func(): delete_list(list_data, panel))
 
-	# 🧱 CLICKABLE AREA
+	# CLICKABLE AREA
 	var click_area = Button.new()
 	click_area.text = ""
 	click_area.flat = true
