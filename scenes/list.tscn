@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ieoculvmc1yo"]
+
+[ext_resource type="Script" uid="uid://dqk36grmwbmog" path="res://scripts/List.gd" id="1_d3xl4"]
+
+[node name="List" type="Node2D" unique_id=199478433]
+
+[node name="Control" type="Control" parent="." unique_id=640615712]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_d3xl4")

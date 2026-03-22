@@ -1,0 +1,112 @@
+{
+  "fill" : {
+    "automatic-gradient" : "display-p3:0.38906,0.12076,0.40714,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "blend-mode-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : "overlay"
+            }
+          ],
+          "fill-specializations" : [
+            {
+              "appearance" : "light",
+              "value" : {
+                "solid" : "display-p3:1.00000,1.00000,1.00000,1.00000"
+              }
+            },
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "linear-gradient" : [
+                  "extended-srgb:1.00000,0.80000,0.00000,1.00000",
+                  "extended-srgb:1.00000,0.21961,0.23529,1.00000"
+                ],
+                "orientation" : {
+                  "start" : {
+                    "x" : 0.769129060833291,
+                    "y" : 0.054953933156796475
+                  },
+                  "stop" : {
+                    "x" : 0.11082465243359275,
+                    "y" : 0.8217175576985755
+                  }
+                }
+              }
+            }
+          ],
+          "glass" : true,
+          "image-name" : "check-box.png",
+          "name" : "check-box",
+          "opacity-specializations" : [
+            {
+              "value" : 1
+            },
+            {
+              "appearance" : "tinted",
+              "value" : 1
+            }
+          ],
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              -40.757936877240695,
+              -44.109924749892684
+            ]
+          }
+        },
+        {
+          "glass" : false,
+          "hidden" : true,
+          "image-name" : "icons8-tick-box-384.png",
+          "name" : "icons8-tick-box-384"
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "layers" : [
+        {
+          "fill" : {
+            "solid" : "display-p3:1.00000,1.00000,1.00000,1.00000"
+          },
+          "image-name" : "check-box-empty.png",
+          "name" : "check-box-empty",
+          "opacity" : 0.5,
+          "position" : {
+            "scale" : 1.25,
+            "translation-in-points" : [
+              41.757936877240695,
+              45.109924749892684
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
