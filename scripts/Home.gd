@@ -1,6 +1,6 @@
 extends Control
 
-@onready var list_container = $VBoxContainer/ScrollContainer/ListContainer
+@onready var list_container = $HBoxContainer/ScrollContainer/ListContainer
 
 var lists = []
 
