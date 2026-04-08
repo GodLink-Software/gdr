@@ -17,12 +17,20 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="uid://brsyl0poqiej4"
 
+[autoload]
+
+DiscordRPCLoader="*uid://d2564g7mf07bw"
+
 [display]
 
 window/size/viewport_width=1024
 window/size/viewport_height=1024
 window/size/initial_position_type=4
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
 
 [physics]
 

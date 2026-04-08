@@ -10,13 +10,20 @@ var lists = []
 func _ready():
 	print("READY WORKING")
 	load_lists()
-	update_columns()
+	#update_columns()
+	
+
+func _process(delta):
+	DiscordRPC.state = ("Currently Has " + str(lists.size()+1) + " Lists")
+	DiscordRPC.refresh()
 
 # ========================
 # BUTTON PRESS
 # ========================
 func _on_NewListButton_pressed():
 	print("BUTTON CLICKED") # DEBUG
+	
+
 	
 	var new_list = {
 		"name": "New List " + str(lists.size() + 1)
@@ -33,11 +40,11 @@ func add_list_to_ui(list_data):
 	var panel = PanelContainer.new()
 	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	#panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	panel.custom_minimum_size = Vector2(180, 230)
+	panel.custom_minimum_size = Vector2(180, 100)
 
 	# STYLE
 	var style = StyleBoxFlat.new()
-	style.bg_color = Color.from_hsv(randf(), 0.4, 0.9) # random soft color
+	style.bg_color = Color("3c3c3cff")
 	style.corner_radius_top_left = 20
 	style.corner_radius_top_right = 20
 	style.corner_radius_bottom_left = 20
@@ -124,9 +131,9 @@ func load_lists():
 # ========================
 # GRID
 # ========================
-func _notification(what):
-	if what == NOTIFICATION_RESIZED:
-		update_columns()
+#func _notification(what):
+	#if what == NOTIFICATION_RESIZED:
+	#	update_columns()
 
-func update_columns():
-	list_container.columns = 3
+#func update_columns():
+#	list_container.columns = 3
